@@ -1,0 +1,31 @@
+let drawingTool = '';
+
+// ...
+
+toolItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+        selectedTool = item.id.replace('Tool', '');
+        isDashed = item.id.includes('dashed');
+
+        toolItems.forEach(tool => tool.classList.remove('selected'));
+        item.classList.add('selected');
+
+        if (selectedTool === 'text') {
+            canvas.classList.add('textCursor');
+        } else {
+            canvas.classList.remove('textCursor');
+        }
+
+        // Aquí estableces drawingTool en lugar de selectedTool
+        drawingTool = selectedTool;
+    });
+});
+
+// ...
+
+function draw(e) {
+    if (!isDrawing || !drawingTool || drawingTool === 'text') return;
+    // ...
+}
+
+// ...

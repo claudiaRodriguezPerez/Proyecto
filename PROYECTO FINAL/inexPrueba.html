@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de las constelaciones</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="menu-content" id="menuContent">
+            <div class="empty-menu"></div> <!-- Añade esto para el menú vacío -->
+        </div>
+        <div class="dropdown">
+            <span>Archivo</span>
+            <div class="dropdown-content">
+                <a href="#">Abrir</a>
+                <a href="#">Exportar a PDF</a>
+                <a href="#">Guardar</a>
+            </div>
+        </div>
+    </div>
+    <div class="menu-btn" id="menuBtn">
+        <img src="img/menu.png" alt="Menú" id="menuImage">
+        <img src="img/menuClick.png" alt="Menú Clic" id="menuClickImage"
+            class="hidden">
+    </div>
+</header>
+
+<main>
+    <div class="tools">
+        <div class="toolbox">
+            <h2>Herramientas</h2>
+            <div class="tool-section">
+                <h3>Figuras</h3>
+                <ul>
+                    <li id="circleTool" class="tool">Círculo</li>
+                    <li id="rectangleTool" class="tool">Rectángulo</li>
+                    <li id="textTool" class="tool">Texto</li>
+                    <li id="continuousArrowTool" class="tool">Flecha continua</li>
+                    <li id="dashedArrowTool" class="tool">Flecha discontinua</li>
+                </ul>
+            </div>
+            
+            <div class="tool-section">
+                <h3>Atributos</h3>
+                <ul>
+                    <li>
+                        <label for="lineWidthRange">Tamaño:</label>
+                        <input type="range" id="lineWidthRange" min="1" max="10" value="3">
+                    </li>
+                    <li>
+                        <label>Colores:</label>
+                        <div class="color-options">
+                            <button id="orangeButton" class="colorButton" data-color="orange"></button>
+                            <button id="blueButton" class="colorButton" data-color="navy"></button>
+                            <button id="blackButton" class="colorButton" data-color="black"></button>
+                            <button id="whiteButton" class="colorButton" data-color="white"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>            
+            <div class="tool-section">
+                <h3>Acciones</h3>
+                <ul>
+                    <li id="undoButton">Deshacer</li>
+                    <li id="clearButton">Borrar</li>
+                    <li id="clearAllButton">Borrar todo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="canvas">
+        <canvas id="drawingCanvas"></canvas>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <img src="img/logo.png" alt="Pie de página">
+    </div>
+</footer>
+
+<script src="nuevoScript.js"></script>
+
+</body>
+</html>

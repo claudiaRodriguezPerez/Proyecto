@@ -1,0 +1,288 @@
+/* Estilos generales */
+header {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: #001f3f;
+    color: #ffffff;
+    padding: 15px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.menu-btn img {
+    filter: invert(80%) sepia(100%) saturate(10000%) hue-rotate(300deg);
+}
+
+.hidden {
+    display: none;
+}
+
+.toolbox li:hover {
+    text-decoration: underline;
+}
+
+#undoButton:hover,
+#clearButton:hover,
+#clearAllButton:hover,
+.dropdown-content a:hover {
+    text-decoration: underline;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #eee;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    border-color: #001f3f;
+    background-color: #ddd;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.tools {
+    width: 250px;
+    border: 3px solid #ccc;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+.toolbox {
+    color: #001f3f;
+    font-size: 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.toolbox h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.toolbox h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.toolbox .divider {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.color-options {
+    display: flex;
+}
+
+.colorButton {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-options {
+    display: flex;
+    margin-top: 6px;
+}
+
+#orangeButton {
+    background-color: orange;
+    border: 2px solid #ccc;
+}
+
+#orangeButton:hover {
+    border-color: #40a3ff;
+}
+
+#blueButton {
+    background-color: navy;
+    border: 2px solid #ccc;
+}
+
+#blueButton:hover {
+    border-color: #40a3ff;
+}
+
+#blackButton {
+    background-color: black;
+    border: 2px solid #ccc;
+}
+
+#blackButton:hover {
+    border-color: #40a3ff;
+}
+
+#whiteButton {
+    background-color: white;
+    border: 2px solid #ccc;
+}
+
+#whiteButton:hover {
+    border-color: #40a3ff;
+}
+
+.toolbox ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toolbox .tool-section ul li {
+    margin-bottom: 10px;
+}
+
+.toolbox ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.toolbox ul li:hover {
+    color: #40a3ff;
+}
+
+.canvas {
+    flex-grow: 1;
+    position: relative;
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.selected {
+    border-color: #40a3ff !important;
+    box-shadow: 0 0 5px #40a3ff;
+}
+
+.colorButton.selected {
+    border: 2px solid #40a3ff;
+}
+
+.footer-content {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+  
+    .tools {
+        width: 100%;
+        height: auto;
+    }
+  
+    .canvas {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+#drawingCanvas.textCursor {
+    cursor: text;
+}
+
+/* Establecemos un estilo para las herramientas seleccionadas */
+.tool-section .selected {
+    color: #40a3ff !important;
+    font-weight: bold;
+}
+
+/* Destacamos los botones de color seleccionados */
+.colorButton.selected {
+    border: 2px solid #40a3ff;
+}
+
+.toolbox .tool-section ul .arrow {
+    margin-top: 6px;
+    margin-left: 20px; /* Ajusta el margen izquierdo para mover las flechas a la derecha */
+}
+
+.toolbox .tool-section ul .arrow.selectedArrow {
+    text-decoration: underline; /* Subraya solo la flecha seleccionada */
+}
+
+.menu-btn {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-content.show {
+    display: block;
+}
+
+.canvas-tools-container {
+    position: relative;
+}
+
+/* SOLO FUNCIONA PARA EL TAMAÑO DE MI PANTALLA HAY QIE DARLE EL TAMAÑO DE LA CAJA DE HERRAMIENTAS */
+.menu-content {
+    display: none;
+    position: absolute;
+    width: 250px;
+    top: 75px;
+    bottom: 135px;
+    padding: 20px;
+    right: 0; /* O ajusta según sea necesario */
+    background-color: #f0f0f0; /* Color de fondo del menú */
+    border: 3px solid #ccc; /* Borde del menú */
+    z-index: 1;
+}
+
+
